@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" charcode>
+
+<head>
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <!--<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+    <style>        
+        #calculator {
+            width: 370px;
+            height: 400px;
+            padding: 20px;
+            margin: 100px auto;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px gray;
+            border: 2px solid gray;
+        }
+        
+        .calculator-body {
+            margin: 30px auto;
+
+        }
+        
+        .screen{
+            background: linear-gradient(to bottom, #709d72, #A2D7D8);
+            line-height: 1.3;
+            font-size: 2.5em;
+            color: white;
+            font-family: monospace, serif;
+            padding-right: 20px;
+            text-align: right;
+            border: 2px solid gray;
+			overflow: hidden;
+        }
+        
+        
+        button {
+            background-color: floralwhite;
+            height: 50px;
+            width: 80px;
+            margin: 5px;
+            font-size: 24px;
+            float: left;
+        }
+        
+        .plus{
+            position: relative;
+            height: 110px;
+            top: -60px;
+            vertical-align: bottom;
+            line-height: 110px;
+        }
+        
+        .row{
+            clear: both;
+        }
+    </style>
+ </head>
+
+<body>
+    <div id='calculator' ng-app='app' ng-controller='calculator as vm'>
+        <div class='screen'>{{vm.display}}</div>
+        <div class="calculator-body">
+            <div class="row">
+                <button ng-click="vm.allClear()">AC</button>
+                <button ng-click="vm.clearEntry()">CE</button>
+                <button ng-click="vm.percent()">%</button>
+                <button ng-click="vm.keyPress('/')">/</button>
+            </div>
+            <div class="row">
+                <button ng-click="vm.keyPress(7)">7</button>
+                <button ng-click="vm.keyPress(8)">8</button>
+                <button ng-click="vm.keyPress(9)">9</button>
+                <button ng-click="vm.keyPress('x')">X</button>
+            </div>
+            <div class="row">
+                <button ng-click="vm.keyPress(4, false)">4</button>
+                <button ng-click="vm.keyPress(5, false)">5</button>
+                <button ng-click="vm.keyPress(6, false)">6</button>
+                <button ng-click="vm.keyPress('-')">-</button>
+            </div>
+            <div class="row">
+                <div>
+                    <div class="row">
+                        <button ng-click="vm.keyPress(1)">1</button>
+                        <button ng-click="vm.keyPress(2)">2</button>
+                        <button ng-click="vm.keyPress(3)">3</button>
+ 
+                    </div>
+                    <div class="row">
+                        <button ng-click="vm.keyPress(0)">0</button>
+                        <button ng-click="vm.keyPress('.')">.</button>
+                        <button ng-click="vm.keyPress('=')">=</button>
+                    </div>
+                    <button class="plus" ng-click="vm.keyPress('+')">+</button>
+ </div>
+            </div>
+        </div>
+    </div>
+    <script src="../bower_components/angular.js"></script>
+    <script src="Calculator.js"></script>
+</body>
+
+</html>

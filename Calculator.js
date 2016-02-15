@@ -13,22 +13,20 @@ function calculator(){
     vm.keyPress = keyPress;
     vm.allClear = allClear;
     vm.clearEntry = clearEntry;
-	vm.percent = percent;
-    
+    vm.percent = percent;
     vm.memory = {
-		key: null,
-		value: 0, 
-		operation: null
-	};
-	
-  	vm.operations = {
-  		'+': add,
-  		'-': subtract,
-  		'x': multiply,
-  		'/': divide,
-  		'%': percent,
-  		'=': equals
-  	};
+	key: null,
+	value: 0, 
+	operation: null
+    };
+    vm.operations = {
+        '+': add,
+  	'-': subtract,
+  	'x': multiply,
+  	'/': divide,
+  	'%': percent,
+  	'=': equals
+    };
     
     function keyPress(key){
 
